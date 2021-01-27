@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/DropDownWork.dart';
-import 'package:flutterapp/HomeScreen.dart';
-import 'package:flutterapp/SecondScreen.dart';
+import 'package:flutterapp/DropDownWidget.dart';
 import 'package:flutterapp/ThirdScreen.dart';
+
+
+
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DropDownWidget(),
+      home: ThirdScreen(),
     );
   }
 }

@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 class DropDownWidget extends StatefulWidget {
@@ -6,6 +7,8 @@ class DropDownWidget extends StatefulWidget {
 }
 
 class _DropDownWidgetState extends State<DropDownWidget> {
+
+  final _formKey = GlobalKey<FormState>();
   String dropdownValue1 = 'Tinni';
   String dropdownValue2 = 'tinni@gmail.com';
   String dropdownValue3 = '01368526585';
@@ -21,6 +24,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
   ];
 
   List<String> spinnerItems3 = [
+
     '01368526585',
     '0132456987',
     '0123654789',
@@ -28,6 +32,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
     '03697426552'
   ];
   List<String> spinnerItems4 = [
+
     '8210',
     '1216',
     '1207',
@@ -38,6 +43,21 @@ class _DropDownWidgetState extends State<DropDownWidget> {
  String value=_selectedItemValue;
 
   static String _selectedItemValue;
+
+  void _trySubmitForm() {
+    final isValid = _formKey.currentState.validate();
+    if (isValid) {
+      print('Everything looks good!');
+      print(dropdownValue1);
+      */
+/*print(dropdownValue2);
+      print(dropdownValue3);*//*
+
+
+
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +84,10 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                       _selectedItemValue = value;
                     });
                   },
-                  child: DropdownButtonFormField(
+                  child: DropdownButtonFormField<String>(
 
-                    validator: (value)=>value == null? "* please choose one" : null,
-                    hint:Text('please select one'),
+                    validator: (value)=>value == null? "* required" : null,
+                   // hint:Text('please select one'),
                     value: dropdownValue1,
                     icon: Icon(
                       Icons.arrow_drop_down,
@@ -82,13 +102,16 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                     style: TextStyle(color: Colors.black, fontSize: 18),
 
 
-                    /*underline: Container(
+                    */
+/*underline: Container(
                       height: 2,
                       color: Colors.blue,
-                    ),*/
+                    ),*//*
+
                     onChanged: (String data) {
                       setState(() {
                         dropdownValue1 = data;
+                        print(dropdownValue1);
                       });
 
                     },
@@ -126,10 +149,12 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                   iconSize: 24,
                   elevation: 16,
                   style: TextStyle(color: Colors.black, fontSize: 18),
-                  /*underline: Container(
+                  */
+/*underline: Container(
                     height: 2,
                     color: Colors.blue ,
-                  ),*/
+                  ),*//*
+
                   onChanged: (String data) {
                     setState(() {
                       dropdownValue2 = data;
@@ -162,10 +187,12 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                   iconSize: 24,
                   elevation: 16,
                   style: TextStyle(color: Colors.black, fontSize: 18),
-                  /*underline: Container(
+                  */
+/*underline: Container(
                     height: 2,
                     color: Colors.blue,
-                  ),*/
+                  ),*//*
+
                   onChanged: (String data) {
                     setState(() {
                       dropdownValue3 = data;
@@ -198,10 +225,12 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                   iconSize: 24,
                   elevation: 16,
                   style: TextStyle(color: Colors.black, fontSize: 18),
-                  /* underline: Container(
+                  */
+/* underline: Container(
                     height: 2,
                     color: Colors.blue,
-                  ),*/
+                  ),*//*
+
                   onChanged: (String data) {
                     setState(() {
                       dropdownValue4 = data;
@@ -218,10 +247,19 @@ class _DropDownWidgetState extends State<DropDownWidget> {
                 ),
               ),
 
-              /*Text('Selected Item = ' + '$dropdownValue',
+              SizedBox(height: 20),
+              Container(
+                  alignment: Alignment.centerRight,
+                  child: OutlinedButton(
+                      onPressed: _trySubmitForm,
+                      child: Text('Submit')))
+
+              */
+/*Text('Selected Item = ' + '$dropdownValue',
                 style: TextStyle(fontSize: 22,
                 color: Colors.black),
-              )*/
+              )*//*
+
             ],
           ),
         ),
@@ -229,3 +267,4 @@ class _DropDownWidgetState extends State<DropDownWidget> {
     );
   }
 }
+*/
